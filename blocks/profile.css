@@ -23,8 +23,8 @@
 }
 
 .profile__edit-button {
-  border-style: none;
-  background-color: #fcf5e5;
+  border: none;
+  background-color: transparent;
   margin-top: auto;
   padding: 0;
   width: 107px;
