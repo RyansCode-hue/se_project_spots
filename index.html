@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spots Project</title>
+    <meta
+      name="description"
+      content="Welcome to the Coffee Shop, Enjoy some coffee"
+    />
+    <meta name="keywords" content="coffee, shop, beverages" />
+    <meta name="author" content="Ryan Ellerbroek" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Spots</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Spots Project</h1>
+  <div class="page">
+    <header class="header">
+        <img src="./images/logo.svg" alt="Spots Logo" class="header__logo" />
     </header>
-    <main>
-        <p>This is a basic HTML layout.</p>
+    <main class="content">
+        <section class="profile page__section">
+          <img src="./images/avatar.jpg" alt="Profile Picture" class="profile__image" />
+          <div class="profile__column">
+            <h1 class="profile__name">Ryan Ellerbroek</h1>
+            <p class="profile__bio">Aspiring Coder</p>
+            <button class="profile__edit-button">
+            <img src="./images/pencil.svg" alt="Pencil Icon"/>Edit Profile</button>
+          </div>
+          <button class="profile__add-button">
+            <img src="./images/plus.svg" alt="Plus Icon"/>New Post</button>
+        </section>
+        <section class="cards page__section"></section>
     </main>
-    <footer>
-        <p> 2024 Spots Project</p>
+    <footer class="footer">
     </footer>
+  </div>
 </body>
 </html>
