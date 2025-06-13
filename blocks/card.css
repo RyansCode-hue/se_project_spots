@@ -33,7 +33,12 @@
   cursor: pointer;
   width: 23px;
   height: 20px;
+  transition: opacity 0.2s ease-in-out;
   opacity: 0.4;
+}
+
+.card__like-button:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
