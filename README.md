@@ -34,22 +34,12 @@ This project serves as a UI/UX demo, emphasizing clean layout design, responsive
 
 ## 🖼️ Visuals
 
-### 👤 Profile Section  
-<img src="./images/avatar.jpg" alt="User profile" width="300" />
-
-### 🖼️ Gallery Cards
-| Val Thorens | Outdoor Café | Mountain House |
-|-------------|--------------|----------------|
-| <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" width="250"/> | <img src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg" width="250"/> | <img src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg" width="250"/> |
-
----
+Desktop View: <img src="./images/DesktopView.png">
+Tablet View: <img src="./images/TabletView.png">
+Mobile: <img src="./images/MobileView.png">
 
 ## 🌐 Live Demo
 
-[🔗 View on GitHub Pages](https://your-username.github.io/your-repo-name)
-
-> Replace the above link with your actual GitHub Pages deployment URL.
+[🔗 View on GitHub Pages](https://ryanscode-hue.github.io/se_project_spots/)
 
 ---
-
-
