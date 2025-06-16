@@ -14,6 +14,7 @@
   border-radius: 8px;
   height: 190px;
   width: 190px;
+  object-fit: cover;
 }
 
 .profile__name {
@@ -44,6 +45,7 @@
 }
 
 .profile__edit-button {
+  color: #212121;
   border: none;
   background-color: transparent;
   margin-top: auto;
@@ -70,7 +72,7 @@
 .profile__add-button {
   margin: auto 0 0 auto;
   color: #fff;
-  background-color: black;
+  background-color: #212121;
   border-radius: 8px;
   border: none;
   width: 149px;
