@@ -42,4 +42,6 @@ Mobile: <img src="./images/MobileView.png">
 
 [🔗 View on GitHub Pages](https://ryanscode-hue.github.io/se_project_spots/)
 
+[Video Demo](https://drive.google.com/file/d/17xup3ZR6M-4FGTUcC1z322tSqhlFTt-C/view?usp=sharing)
+
 ---
