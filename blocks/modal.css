@@ -1,0 +1,23 @@
+.modal {
+  visibility: hidden;
+  position:fixed;
+  background-color: #000;
+  opacity: .5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
