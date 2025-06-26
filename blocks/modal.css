@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .modal_is-opened {
@@ -30,9 +31,9 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  border: none;
   background-color: #fff;
   cursor: pointer;
+  border: none;
 }
 
 .modal__save-button {
@@ -40,15 +41,28 @@
   background-color: #212121;
   border-radius: 8px;
   border: none;
-  width: 156px;
+  max-width: 156px;
   height: 52px;
   cursor: pointer;
+  line-height: 1;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .modal__title {
   margin: 0 0 32px;
-  display: flex;
-  box-sizing: border-box;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 500;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 .modal__form {
@@ -64,10 +78,15 @@
   border: 1px solid #2121214d;
   padding: 16px 12px;
   box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1;
 }
 
 .modal__input::placeholder {
   color: #2121214d;
+  line-height: 1;
 }
 
 .modal__label {
@@ -75,7 +94,13 @@
 }
 
 @media screen and (max-width: 627px) {
+  .modal__title {
+    font-size: 20px;
+    margin: 0 0 24px;
+  }
+
   .modal__save-button {
     width: 100%;
+    max-width: none;
   }
 }
