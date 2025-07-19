@@ -55,13 +55,6 @@
   font-size: 16px;
 }
 
-.modal__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-}
-
 .modal__title {
   margin: 0 0 32px;
   font-size: 32px;
@@ -102,10 +95,20 @@
   .modal__title {
     font-size: 20px;
     margin: 0 0 24px;
+    padding: 10px 0 10px;
   }
 
   .modal__save-button {
     width: 100%;
     max-width: none;
+  }
+
+  .modal__container {
+    padding: 12px;
+  }
+
+  .modal__close-button {
+    top: 12px;
+    right: 12px;
   }
 }
