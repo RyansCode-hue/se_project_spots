@@ -66,31 +66,22 @@ const editProfileBioInput =
 const profileNameEl = document.querySelector(".profile__name");
 const profileBioEl = document.querySelector(".profile__bio");
 
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
-
 editProfileButton.addEventListener("click", function () {
-  openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileBioInput.value = profileBioEl.textContent;
+  openModal(editProfileModal);
 });
+
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-function handleEditProfileSubmit(evt) {
+editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileBioEl.textContent = editProfileBioInput.value;
   closeModal(editProfileModal);
-}
-
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+});
 
 // New Post Modal
 const newPostButton = document.querySelector(".profile__add-button");
@@ -103,11 +94,12 @@ const postCaptionInput = newPostModal.querySelector("#post-caption-input");
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
 });
+
 newPostCloseButton.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-function handleNewPostSubmit(evt) {
+newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const newCard = {
     name: postCaptionInput.value,
@@ -117,9 +109,7 @@ function handleNewPostSubmit(evt) {
   cardsList.prepend(cardElement);
   newPostForm.reset();
   closeModal(newPostModal);
-}
-
-newPostForm.addEventListener("submit", handleNewPostSubmit);
+});
 
 // Initial Cards Loop
 initialCards.forEach(function (card) {
