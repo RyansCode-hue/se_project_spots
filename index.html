@@ -44,7 +44,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <img src="" alt="" class="card__image" />
+                <img class="card__image" src="" alt="" />
                 <div class="card__content">
                   <h2 class="card__content-desc"></h2>
                   <button type="button" class="card__delete-button"></button>
@@ -123,6 +123,23 @@
             </label>
             <button type="submit" class="modal__save-button">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal modal_image_preview" id="preview-modal">
+        <div class="modal__image-container">
+          <button
+            type="button"
+            class="modal__close-button modal__close-button_preview"
+            aria-label="Close Modal"
+          >
+            <img
+              src="./images/Close Icon-PW.svg"
+              alt="Close Icon"
+              class="close__icon"
+            />
+          </button>
+          <img src="#" alt="" class="modal__image" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>
