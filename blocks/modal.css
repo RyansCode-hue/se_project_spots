@@ -159,7 +159,7 @@
 
   .modal__caption {
     margin: 8px 0 0;
-    font 16px;
+    font: 16px;
   }
 
   .modal__close-button_preview {
@@ -167,7 +167,7 @@
     right: 0;
   }
 
-.modal__image {
-  max-width: unset;
-}
+  .modal__image {
+    max-width: unset;
+  }
 }
