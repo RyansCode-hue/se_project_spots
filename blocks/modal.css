@@ -101,11 +101,11 @@
 }
 
 .modal__input_type_error {
-  border: 1.5px solid rgba(255, 0, 0, 0.6) !important;
+  border: 1.5px solid rgba(255, 0, 0, 0.6);
 }
 
 .modal__input_type_error:focus {
-  border: 1.5px solid rgba(255, 0, 0, 0.6) !important;
+  border: 1.5px solid rgba(255, 0, 0, 0.6);
   outline: none;
 }
 
@@ -156,11 +156,11 @@
   display: inline-block;
 }
 
-.close__icon {
+.modal__close-icon {
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
 }
-.close__icon:hover {
+.modal__close-icon:hover {
   opacity: 0.4;
 }
 

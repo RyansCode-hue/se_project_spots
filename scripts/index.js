@@ -93,7 +93,6 @@ function handleEscClose(evt) {
     if (openedModal) {
       closeModal(openedModal);
       const form = openedModal.querySelector(".modal__form");
-      if (form) resetFormErrors(form);
     }
   }
 }
@@ -105,7 +104,6 @@ modals.forEach((modal) => {
     if (evt.target === modal) {
       closeModal(modal);
       const form = modal.querySelector(".modal__form");
-      if (form) resetFormErrors(form);
     }
   });
 });
@@ -158,7 +156,6 @@ newPostButton.addEventListener("click", function () {
 
 newPostCloseButton.addEventListener("click", function () {
   closeModal(newPostModal);
-  resetFormErrors(newPostForm);
 });
 
 newPostForm.addEventListener("submit", function (evt) {
@@ -172,6 +169,9 @@ newPostForm.addEventListener("submit", function (evt) {
   newPostForm.reset();
   closeModal(newPostModal);
   resetFormErrors(newPostForm);
+  const saveButton = newPostForm.querySelector(".modal__save-button");
+  saveButton.classList.add("button_inactive");
+  saveButton.disabled = true;
 });
 
 // Initial Cards Loop
