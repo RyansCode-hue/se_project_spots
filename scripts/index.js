@@ -92,7 +92,6 @@ function handleEscClose(evt) {
     const openedModal = document.querySelector(".modal_is-opened");
     if (openedModal) {
       closeModal(openedModal);
-      // Optionally, reset errors for forms inside modals
       const form = openedModal.querySelector(".modal__form");
       if (form) resetFormErrors(form);
     }
@@ -105,7 +104,6 @@ modals.forEach((modal) => {
   modal.addEventListener("mousedown", function (evt) {
     if (evt.target === modal) {
       closeModal(modal);
-      // Optionally, reset errors for forms inside modals
       const form = modal.querySelector(".modal__form");
       if (form) resetFormErrors(form);
     }
