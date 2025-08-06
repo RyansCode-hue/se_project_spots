@@ -1,3 +1,11 @@
+// Utility to disable a form's submit button and style it as inactive
+const disableSubmitButton = (formElement, config = settings) => {
+  const saveButton = formElement.querySelector(config.submitButtonSelector);
+  if (saveButton) {
+    saveButton.classList.add(config.inactiveButtonClass);
+    saveButton.disabled = true;
+  }
+};
 // Validation configuration object
 const settings = {
   formSelector: ".modal__form",

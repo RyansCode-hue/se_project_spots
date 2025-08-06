@@ -128,11 +128,11 @@ editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileBioInput.value = profileBioEl.textContent;
   openModal(editProfileModal);
+  resetFormErrors(editProfileForm);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
-  resetFormErrors(editProfileForm);
 });
 
 editProfileForm.addEventListener("submit", function (evt) {
@@ -169,14 +169,11 @@ newPostForm.addEventListener("submit", function (evt) {
   newPostForm.reset();
   closeModal(newPostModal);
   resetFormErrors(newPostForm);
-  const saveButton = newPostForm.querySelector(".modal__save-button");
-  saveButton.classList.add("button_inactive");
-  saveButton.disabled = true;
+  disableSubmitButton(newPostForm);
 });
 
 // Initial Cards Loop
 initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
-  resetFormErrors(editProfileForm);
 });
