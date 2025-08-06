@@ -79,11 +79,39 @@ previewModalCloseButton.addEventListener("click", () => {
 // Modal Open/Close Functions
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
+
+// Close modal on Escape key
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+      // Optionally, reset errors for forms inside modals
+      const form = openedModal.querySelector(".modal__form");
+      if (form) resetFormErrors(form);
+    }
+  }
+}
+
+// Close modal when clicking outside the modal container
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", function (evt) {
+    if (evt.target === modal) {
+      closeModal(modal);
+      // Optionally, reset errors for forms inside modals
+      const form = modal.querySelector(".modal__form");
+      if (form) resetFormErrors(form);
+    }
+  });
+});
 
 // Edit Profile Modal
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -109,6 +137,7 @@ editProfileButton.addEventListener("click", function () {
 
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
+  resetFormErrors(editProfileForm);
 });
 
 editProfileForm.addEventListener("submit", function (evt) {
@@ -132,6 +161,7 @@ newPostButton.addEventListener("click", function () {
 
 newPostCloseButton.addEventListener("click", function () {
   closeModal(newPostModal);
+  resetFormErrors(newPostForm);
 });
 
 newPostForm.addEventListener("submit", function (evt) {
@@ -144,10 +174,12 @@ newPostForm.addEventListener("submit", function (evt) {
   cardsList.prepend(cardElement);
   newPostForm.reset();
   closeModal(newPostModal);
+  resetFormErrors(newPostForm);
 });
 
 // Initial Cards Loop
 initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
+  resetFormErrors(editProfileForm);
 });

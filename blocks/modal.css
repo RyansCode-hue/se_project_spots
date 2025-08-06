@@ -63,6 +63,13 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.modal__save-button.button_inactive,
+.modal__save-button:disabled {
+  background-color: rgba(33, 33, 33, 0.5);
+  cursor: not-allowed;
 }
 
 .modal__title {
@@ -90,6 +97,16 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.1;
+  transition: border-color 0.2s;
+}
+
+.modal__input_type_error {
+  border: 1.5px solid rgba(255, 0, 0, 0.6) !important;
+}
+
+.modal__input_type_error:focus {
+  border: 1.5px solid rgba(255, 0, 0, 0.6) !important;
+  outline: none;
 }
 
 .modal__input::placeholder {
@@ -97,8 +114,19 @@
   line-height: 1;
 }
 
+.modal__error {
+  margin-top: 8px;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: rgba(255, 0, 0, 0.7);
+}
+
 .modal__label {
   margin: 0 0 32px;
+  display: block;
 }
 
 .modal__image {
