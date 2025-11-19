@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to the Coffee Shop, Enjoy some coffee"
+    />
+    <meta name="keywords" content="coffee, shop, beverages" />
+    <meta name="author" content="Ryan Ellerbroek" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Spots</title>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="./images/logo.svg" alt="Spots Logo" class="header__logo" />
+      </header>
+
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="./images/avatar.jpg"
+            alt="Profile Picture"
+            class="profile__image"
+          />
+          <div class="profile__column">
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__bio">Civil Aviator</p>
+            <button type="button" class="profile__edit-button">
+              <img src="./images/pencil.svg" alt="Pencil Icon" />
+              Edit Profile
+            </button>
+          </div>
+          <button type="button" class="profile__add-button">
+            <img src="./images/plus.svg" alt="Plus Icon" />New Post
+          </button>
+        </section>
+
+        <section class="cards page__section">
+          <ul class="cards__list">
+            <template id="card-template">
+              <li class="card">
+                <img class="card__image" src="" alt="" />
+                <div class="card__content">
+                  <h2 class="card__content-desc"></h2>
+                  <button type="button" class="card__delete-button"></button>
+                  <button type="button" class="card__like-button"></button>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">2025 © Spots</p>
+      </footer>
+
+      <div class="modal" id="edit-profile-modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">Edit profile</h2>
+            <button type="button" class="modal__close-button">
+              <img src="./images/CloseIcon.svg" alt="Close Icon" />
+            </button>
+          </div>
+          <form class="modal__form">
+            <label for="profile-name-input" class="modal__label">
+              Name
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your name"
+                required
+                minlength="2"
+                maxlength="40"
+              />
+              <span class="modal__error" hidden></span>
+            </label>
+            <label for="profile-bio-input" class="modal__label">
+              Description
+              <input
+                id="profile-bio-input"
+                type="text"
+                class="modal__input"
+                placeholder="Describe yourself"
+                required
+                minlength="2"
+                maxlength="200"
+              />
+              <span class="modal__error" hidden></span>
+            </label>
+            <button type="submit" class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">New Post</h2>
+            <button type="button" class="modal__close-button">
+              <img src="./images/CloseIcon.svg" alt="Close Icon" />
+            </button>
+          </div>
+          <form class="modal__form">
+            <label for="post-link-input" class="modal__label">
+              Image Link
+              <input
+                id="post-link-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to an image"
+                required
+              />
+              <span class="modal__error" hidden></span>
+            </label>
+            <label for="post-caption-input" class="modal__label">
+              Caption
+              <input
+                id="post-caption-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your caption"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <span class="modal__error" hidden></span>
+            </label>
+            <button type="submit" class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal_image_preview" id="preview-modal">
+        <div class="modal__image-container">
+          <button
+            type="button"
+            class="modal__close-button modal__close-button_preview"
+            aria-label="Close Modal"
+          >
+            <img
+              src="./images/CloseIcon-PW.svg"
+              alt="Close Icon"
+              class="modal__close-icon"
+            />
+          </button>
+          <img src="#" alt="" class="modal__image" />
+          <p class="modal__caption"></p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
