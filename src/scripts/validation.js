@@ -1,5 +1,5 @@
 // Utility to disable a form's submit button and style it as inactive
-const disableSubmitButton = (formElement, config = settings) => {
+export const disableSubmitButton = (formElement, config = settings) => {
   const saveButton = formElement.querySelector(config.submitButtonSelector);
   if (saveButton) {
     saveButton.classList.add(config.inactiveButtonClass);
@@ -7,7 +7,7 @@ const disableSubmitButton = (formElement, config = settings) => {
   }
 };
 // Validation configuration object
-const settings = {
+export const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-button",
@@ -86,7 +86,7 @@ const setEventListeners = (formElement, config) => {
 };
 
 // Enable validation for all forms
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
@@ -94,7 +94,7 @@ const enableValidation = (config) => {
 };
 
 // Reset all errors and input styles in a form
-const resetFormErrors = (formElement, config = settings) => {
+export const resetFormErrors = (formElement, config = settings) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
@@ -102,5 +102,3 @@ const resetFormErrors = (formElement, config = settings) => {
     hideInputError(formElement, inputElement, config);
   });
 };
-
-enableValidation(settings);

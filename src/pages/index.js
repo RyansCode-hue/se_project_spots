@@ -1,3 +1,19 @@
+import {
+  enableValidation,
+  resetFormErrors,
+  disableSubmitButton,
+  settings,
+} from "../scripts/validation.js";
+import "./index.css";
+
+// Import images so webpack processes them
+import logoSrc from "../images/logo.svg";
+import pencilSrc from "../images/pencil.svg";
+import plusSrc from "../images/plus.svg";
+import closeIconSrc from "../images/CloseIcon.svg";
+import closeIconPWSrc from "../images/CloseIcon-PW.svg";
+import avatarSrc from "../images/avatar.jpg";
+
 // Array of initial cards
 const initialCards = [
   {
@@ -29,6 +45,17 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+// Set image sources from webpack imports
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".header__logo").src = logoSrc;
+  document.querySelector(".profile__image").src = avatarSrc;
+  document.querySelector(".profile__edit-button img").src = pencilSrc;
+  document.querySelector(".profile__add-button img").src = plusSrc;
+  document.querySelectorAll("#edit-profile-modal .modal__close-button img")[0].src = closeIconSrc;
+  document.querySelectorAll("#new-post-modal .modal__close-button img")[0].src = closeIconSrc;
+  document.querySelector("#preview-modal .modal__close-button img").src = closeIconPWSrc;
+});
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -177,3 +204,6 @@ initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
 });
+
+// Enable validation
+enableValidation(settings);
