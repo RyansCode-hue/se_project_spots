@@ -21,11 +21,20 @@
 
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Profile Picture"
-            class="profile__image"
-          />
+          <div class="profile__image-container">
+            <img
+              src="./images/avatar.jpg"
+              alt="Profile Picture"
+              class="profile__image"
+            />
+            <button
+              type="button"
+              class="profile__image-edit-button"
+              aria-label="Edit avatar"
+            >
+              <img src="./images/pencil.svg" alt="Edit Icon" />
+            </button>
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__bio">Civil Aviator</p>
@@ -127,6 +136,43 @@
                 required
                 minlength="2"
                 maxlength="30"
+              />
+              <span class="modal__error" hidden></span>
+            </label>
+            <button type="submit" class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="delete-card-modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">Are you sure?</h2>
+            <button type="button" class="modal__close-button">
+              <img src="./images/CloseIcon.svg" alt="Close Icon" />
+            </button>
+          </div>
+          <form class="modal__form" id="delete-card-form">
+            <button type="submit" class="modal__save-button">Yes</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="update-avatar-modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">Change profile picture</h2>
+            <button type="button" class="modal__close-button">
+              <img src="./images/CloseIcon.svg" alt="Close Icon" />
+            </button>
+          </div>
+          <form class="modal__form">
+            <label for="avatar-link-input" class="modal__label">
+              Image Link
+              <input
+                id="avatar-link-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to an image"
+                required
               />
               <span class="modal__error" hidden></span>
             </label>
