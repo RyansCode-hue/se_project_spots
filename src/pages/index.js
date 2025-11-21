@@ -65,7 +65,9 @@ const editProfileNameInput = editProfileModal.querySelector(
 );
 const editProfileBioInput =
   editProfileModal.querySelector("#profile-bio-input");
-const editProfileSubmitButton = editProfileForm.querySelector(".modal__save-button");
+const editProfileSubmitButton = editProfileForm.querySelector(
+  ".modal__save-button"
+);
 
 // New Post Modal
 const newPostButton = document.querySelector(".profile__add-button");
@@ -82,17 +84,23 @@ const deleteCardCloseButton = deleteCardModal.querySelector(
   ".modal__close-button"
 );
 const deleteCardForm = document.querySelector("#delete-card-form");
-const deleteCardSubmitButton = deleteCardForm.querySelector(".modal__save-button");
+const deleteCardSubmitButton = deleteCardForm.querySelector(
+  ".modal__save-button"
+);
 
 // Update Avatar Modal
-const updateAvatarButton = document.querySelector(".profile__image-edit-button");
+const updateAvatarButton = document.querySelector(
+  ".profile__image-edit-button"
+);
 const updateAvatarModal = document.querySelector("#update-avatar-modal");
 const updateAvatarCloseButton = updateAvatarModal.querySelector(
   ".modal__close-button"
 );
 const updateAvatarForm = updateAvatarModal.querySelector(".modal__form");
 const avatarLinkInput = updateAvatarModal.querySelector("#avatar-link-input");
-const updateAvatarSubmitButton = updateAvatarForm.querySelector(".modal__save-button");
+const updateAvatarSubmitButton = updateAvatarForm.querySelector(
+  ".modal__save-button"
+);
 
 // Variables for delete confirmation
 let selectedCard;
@@ -154,8 +162,10 @@ function handleDeleteClick(card) {
 
 function handleLikeClick(card) {
   const isLiked = card.isLiked();
-  const likeAction = isLiked ? api.dislikeCard(card.getId()) : api.likeCard(card.getId());
-  
+  const likeAction = isLiked
+    ? api.dislikeCard(card.getId())
+    : api.likeCard(card.getId());
+
   likeAction
     .then(() => {
       card.setIsLiked(!isLiked);
@@ -181,7 +191,7 @@ function createCard(cardData) {
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
   renderLoading(deleteCardSubmitButton, true, "Deleting...");
-  
+
   api
     .removeCard(selectedCardId)
     .then(() => {
@@ -202,7 +212,7 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   renderLoading(editProfileSubmitButton, true);
   editProfileSubmitButton.dataset.originalText = "Save";
-  
+
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -226,7 +236,7 @@ function handleNewPostSubmit(evt) {
   evt.preventDefault();
   renderLoading(newPostSubmitButton, true);
   newPostSubmitButton.dataset.originalText = "Save";
-  
+
   api
     .addCard({
       name: postCaptionInput.value,
@@ -253,7 +263,7 @@ function handleUpdateAvatarSubmit(evt) {
   evt.preventDefault();
   renderLoading(updateAvatarSubmitButton, true);
   updateAvatarSubmitButton.dataset.originalText = "Save";
-  
+
   api
     .updateAvatar({
       avatar: avatarLinkInput.value,
